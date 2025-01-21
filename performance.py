@@ -13,13 +13,12 @@ def track_performance(func, arr):
     end_time = time.time()
     tracemalloc.stop()
 
-    mem_used = start_snapshot - end_snapshot
     memory_diff = end_snapshot.compare_to(start_snapshot, 'lineno')
     total_memory_used = sum(stat.size_diff for stat in memory_diff)
     
     performance = {
         "Execution Time (seconds)": end_time - start_time,
-        "Total memory used (bytes)": mem_used
+        "Total memory used (bytes)": total_memory_used
     }
     
     return performance
