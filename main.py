@@ -4,7 +4,7 @@ import performance
 import random
 
 
-arr = [random.randint(1, 1000000) for _ in range(100000)]
+arr = list(range(1000000, 0, -1))
     
 merge_sort_perf = performance.track_performance(mergesort.mergesort, arr)
 print("Merge Sort Performance Metrics:", merge_sort_perf)
